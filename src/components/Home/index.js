@@ -3,7 +3,7 @@ import { compose } from 'recompose'
 
 import { withAuthorization, withEmailVerification } from '../Session'
 import { withFirebase } from '../Firebase'
-import Messages from '../Messages'
+import Stats from '../Stats'
 
 class HomePage extends Component {
   constructor (props) {
@@ -28,11 +28,22 @@ class HomePage extends Component {
 
   render () {
     return (
-      <div>
-        <h1>Home Page</h1>
-        <p>The Home Page is accessible by every signed in user.</p>
+      <div className='columns'>
+        <div className='column is-4'>
+          <div className='box'>
+            <p className='title'>Your Assassin dashboard</p>
+            <div className='content'>
+              <p>You can create or join a game here!</p>
+              <p>You can also view your stats!</p>
+            </div>
+          </div>
 
-        <Messages users={this.state.users} />
+        </div>
+        <div className='column'>
+          <div className='box'>
+            <Stats />
+          </div>
+        </div>
       </div>
     )
   }

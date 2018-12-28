@@ -41,7 +41,7 @@ class HomePage extends Component {
         </div>
         <div className='column'>
           <div className='box'>
-            <Stats />
+            <Stats authUser={this.authUser} />
           </div>
         </div>
       </div>
